@@ -12,7 +12,7 @@ class MobilController extends Controller
     {
         $mobil = Mobil::all();
 
-        return view('pages.mobil.index',[
+        return view('pages.mobil.index', [
             'mobil' => $mobil
         ]);
     }
@@ -53,14 +53,14 @@ class MobilController extends Controller
     {
         $mobil = Mobil::findOrFail($id);
 
-        return view('pages.mobil.edit',[
+        return view('pages.mobil.edit', [
             'mobil' => $mobil
         ]);
     }
 
     public function update(Request $request, $id)
     {
-                $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'nama_pemilik' => ['required', 'max:100'],
             'email' => ['required', 'max:200'],
             'no_hp' => ['required', 'max:20'],
